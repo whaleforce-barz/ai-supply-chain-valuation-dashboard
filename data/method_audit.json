@@ -1,0 +1,41 @@
+{
+  "updated_at": "2026-05-31 10:19:07",
+  "shared_labels": [
+    "未充分反映",
+    "合理反映",
+    "偏熱",
+    "過熱",
+    "極度過熱 / priced for perfection",
+    "資料不足"
+  ],
+  "horizon_trading_days": 126,
+  "benchmarks": {
+    "US": {
+      "primary": "SOXX",
+      "secondary": "QQQ"
+    },
+    "TW": {
+      "primary": "0050",
+      "secondary": "TAIEX",
+      "note": "0050 split adjustment retained in existing Taiwan backtest outputs."
+    }
+  },
+  "method": [
+    "同一 industry_model_class 對應同一 valuation_basis。",
+    "合理估值區間採自身歷史與同業分布 50/50；歷史不足時標示 fallback。",
+    "歷史驗證使用月度 signal date 與約 126 交易日半年觀察期。",
+    "sealed test 不可用於反向調參，失敗結果必須顯示。"
+  ],
+  "data_status": {
+    "US": {
+      "screen_rows": 157,
+      "historical_validation": "pending_point_in_time_snapshots",
+      "warning": "美股 current screen 已完整保留；歷史驗證需後續產生月度估值快照。"
+    },
+    "TW": {
+      "screen_rows": 62,
+      "historical_validation": "available_from_existing_outputs",
+      "warning": "validation robust gate 通過，但 sealed company/deployment test 失敗，判定有 overfit 風險。"
+    }
+  }
+}

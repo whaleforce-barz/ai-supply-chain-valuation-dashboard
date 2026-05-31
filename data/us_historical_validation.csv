@@ -1,0 +1,2 @@
+﻿region,section,scenario,label,signal_count,six_month_horizon_days,six_month_return,benchmark_return,excess_return,convergence_rate,hit_rate,max_drawdown,turnover,transaction_cost_case,passed,note
+US,method_status,historical_validation_pending,,,126,,,,,,,,,,美股目前保留 current valuation screen；待累積 point-in-time 月度估值快照後，使用與臺股相同的半年收斂與 sealed-test 流程。

@@ -1,14 +1,20 @@
 # AI Supply Chain Valuation Dashboard
 
-Static dashboard for the AI data center supply-chain valuation screen.
+Static dashboard for US and Taiwan AI data center supply-chain valuation screens.
+The two markets are shown on separate pages, but the browser UI and normalized
+data schema are shared.
 
 ## Contents
 
-- `index.html`: dashboard UI
-- `app.js`: client-side filtering, sorting, and detail modal
+- `index.html`: landing page
+- `us.html`: US AI supply-chain valuation page
+- `tw.html`: Taiwan AI supply-chain valuation page
+- `method.html`: valuation and validation method audit
+- `app.js`: client-side filtering, sorting, validation panels, mean-reversion panels, and detail modal
 - `styles.css`: dashboard styling
-- `ai_supply_chain_valuation_screen.csv`: valuation screen data
-- `ai_supply_chain_valuation_assessment.md`: source assessment notes
+- `data/*.csv`: normalized valuation, historical validation, and six-month mean-reversion data
+- `data/method_audit.json`: shared method and data-status audit
+- `scripts/build_ai_supply_chain_unified_dataset.py`: rebuilds dashboard data from local research outputs
 
 ## Deployment
 

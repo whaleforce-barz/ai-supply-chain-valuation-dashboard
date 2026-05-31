@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>美國 AI 供應鏈估值</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="US">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="pageEyebrow">US AI Supply Chain</p>
+          <h1 id="pageTitle">美國 AI 供應鏈估值</h1>
+          <p class="top-note" id="pageNote"></p>
+        </div>
+        <div class="source-block">
+          <a href="./index.html">首頁</a>
+          <a href="./tw.html">臺灣</a>
+          <a href="./method.html">方法</a>
+          <span id="benchmark">SOXX / QQQ</span>
+          <span id="dataStatus">載入中</span>
+          <a id="csvLink" href="./data/us_valuation_screen.csv">CSV</a>
+          <a id="validationLink" href="./data/us_historical_validation.csv">Validation</a>
+          <a id="reversionLink" href="./data/us_mean_reversion_results.csv">Reversion</a>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <aside class="filters" aria-label="filters">
+          <label class="field">
+            <span>搜尋</span>
+            <input id="searchInput" type="search" placeholder="Ticker / 公司 / 角色" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>類型</span>
+            <select id="categoryFilter"></select>
+          </label>
+          <label class="field">
+            <span>AI 純度</span>
+            <select id="purityFilter">
+              <option value="">全部</option>
+              <option value="高">高</option>
+              <option value="中高">中高</option>
+              <option value="中">中</option>
+              <option value="低到中">低到中</option>
+            </select>
+          </label>
+          <section class="filter-group" aria-label="valuation labels">
+            <div class="filter-title">估值標籤</div>
+            <div id="labelFilters" class="label-filters"></div>
+          </section>
+          <section class="filter-group">
+            <div class="filter-title">排序</div>
+            <div class="sort-row">
+              <select id="sortSelect">
+                <option value="severity">風險</option>
+                <option value="ticker">Ticker</option>
+                <option value="company">公司</option>
+                <option value="marketCap">市值</option>
+                <option value="trailingPE">Trailing PE</option>
+                <option value="forwardPE">Forward PE</option>
+                <option value="pb">PB</option>
+                <option value="ps">PS</option>
+                <option value="revenueGrowth">營收成長</option>
+                <option value="valuation_gap_pct">估值 gap</option>
+                <option value="six_month_return">半年報酬</option>
+              </select>
+              <button id="sortDir" type="button" title="切換排序方向">↓</button>
+            </div>
+          </section>
+          <section class="filter-group">
+            <div class="filter-title">欄位篩選</div>
+            <div class="range-grid">
+              <label class="mini-field"><span>市值 B</span><input data-range="marketCap" data-bound="min" type="number" inputmode="decimal" placeholder="min" /></label>
+              <label class="mini-field"><span>&nbsp;</span><input data-range="marketCap" data-bound="max" type="number" inputmode="decimal" placeholder="max" /></label>
+              <label class="mini-field"><span>TTM PE</span><input data-range="trailingPE" data-bound="min" type="number" inputmode="decimal" placeholder="min" /></label>
+              <label class="mini-field"><span>&nbsp;</span><input data-range="trailingPE" data-bound="max" type="number" inputmode="decimal" placeholder="max" /></label>
+              <label class="mini-field"><span>PB</span><input data-range="pb" data-bound="min" type="number" inputmode="decimal" placeholder="min" /></label>
+              <label class="mini-field"><span>&nbsp;</span><input data-range="pb" data-bound="max" type="number" inputmode="decimal" placeholder="max" /></label>
+              <label class="mini-field"><span>營收成長 %</span><input data-range="revenueGrowth" data-bound="min" type="number" inputmode="decimal" placeholder="min" /></label>
+              <label class="mini-field"><span>&nbsp;</span><input data-range="revenueGrowth" data-bound="max" type="number" inputmode="decimal" placeholder="max" /></label>
+              <label class="mini-field"><span>估值 gap %</span><input data-range="valuation_gap_pct" data-bound="min" type="number" inputmode="decimal" placeholder="min" /></label>
+              <label class="mini-field"><span>&nbsp;</span><input data-range="valuation_gap_pct" data-bound="max" type="number" inputmode="decimal" placeholder="max" /></label>
+            </div>
+            <div class="filter-actions"><button id="clearFilters" type="button">重設篩選</button></div>
+          </section>
+        </aside>
+
+        <section class="content">
+          <section class="kpi-grid" id="kpiGrid"></section>
+          <section class="analysis-grid">
+            <div class="panel chart-panel"><div class="panel-head"><h2>估值分布</h2><span id="filteredCount"></span></div><div id="labelChart" class="bar-chart"></div></div>
+            <div class="panel chart-panel"><div class="panel-head"><h2>供應鏈類型</h2><span>Top 8</span></div><div id="categoryChart" class="bar-chart compact"></div></div>
+          </section>
+          <section class="analysis-grid">
+            <div class="panel"><div class="panel-head"><h2>歷史驗證</h2><span>126 trading days</span></div><div id="validationSummary"></div></div>
+            <div class="panel"><div class="panel-head"><h2>半年均值回歸</h2><span>history + peers</span></div><div id="reversionSummary"></div></div>
+          </section>
+          <section class="split-grid">
+            <div class="panel"><div class="panel-head"><h2>高風險名單</h2><span>過熱以上</span></div><div id="riskList" class="watch-list"></div></div>
+            <div class="panel"><div class="panel-head"><h2>相對合理名單</h2><span>合理 / 未充分反映</span></div><div id="reasonableList" class="watch-list"></div></div>
+          </section>
+          <section class="panel table-panel">
+            <div class="panel-head"><h2>完整股票池</h2><span id="tableMeta"></span></div>
+            <div id="activeFilters" class="active-filters"></div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th><button class="sort-head" type="button" data-sort="ticker">Ticker</button></th>
+                    <th><button class="sort-head" type="button" data-sort="company">公司</button></th>
+                    <th><button class="sort-head" type="button" data-sort="category">類型</button></th>
+                    <th><button class="sort-head" type="button" data-sort="valuation_label">標籤</button></th>
+                    <th><button class="sort-head" type="button" data-sort="price">價格</button></th>
+                    <th><button class="sort-head" type="button" data-sort="marketCap">市值</button></th>
+                    <th><button class="sort-head" type="button" data-sort="trailingPE">TTM PE</button></th>
+                    <th><button class="sort-head" type="button" data-sort="forwardPE">Fwd PE</button></th>
+                    <th><button class="sort-head" type="button" data-sort="evToEbitda">EV/EBITDA</button></th>
+                    <th><button class="sort-head" type="button" data-sort="ps">PS</button></th>
+                    <th><button class="sort-head" type="button" data-sort="pb">PB</button></th>
+                    <th><button class="sort-head" type="button" data-sort="revenueGrowth">營收成長</button></th>
+                    <th><button class="sort-head" type="button" data-sort="valuation_gap_pct">估值 gap</button></th>
+                    <th><button class="sort-head" type="button" data-sort="six_month_return">半年報酬</button></th>
+                    <th>判讀</th>
+                  </tr>
+                </thead>
+                <tbody id="stockTable"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="detailDialog">
+      <form method="dialog"><button class="close-button" value="close" aria-label="close">×</button></form>
+      <div id="detailContent"></div>
+    </dialog>
+    <script src="./app.js"></script>
+  </body>
+</html>

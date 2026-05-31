@@ -101,6 +101,78 @@ h2 {
   background: var(--surface);
 }
 
+.top-note {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.home,
+.method-page {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.home-intro {
+  max-width: 980px;
+  padding: 10px 4px;
+}
+
+.home-intro h2 {
+  max-width: 900px;
+  font-size: clamp(28px, 4vw, 54px);
+  line-height: 1.08;
+}
+
+.home-intro p:not(.eyebrow),
+.method-lead p {
+  max-width: 880px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.landing-grid,
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.landing-card {
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  color: var(--ink);
+}
+
+.landing-card span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.landing-card h2 {
+  margin-top: 36px;
+  font-size: 23px;
+}
+
+.landing-card p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
@@ -249,7 +321,7 @@ button:focus-visible {
 
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(130px, 1fr));
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
   gap: 12px;
 }
 
@@ -472,6 +544,68 @@ table {
   font-size: 13px;
 }
 
+.mini-table {
+  overflow: auto;
+  margin: 0 -4px;
+}
+
+.mini-table table {
+  min-width: 720px;
+  font-size: 12px;
+}
+
+.summary-list {
+  display: grid;
+  gap: 10px;
+}
+
+.summary-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcf8;
+  padding: 12px;
+}
+
+.summary-item.ok {
+  border-color: rgba(31, 111, 85, 0.35);
+  background: var(--green-soft);
+}
+
+.summary-item.danger {
+  border-color: rgba(187, 61, 50, 0.35);
+  background: var(--red-soft);
+}
+
+.summary-item strong,
+.summary-item span {
+  display: block;
+}
+
+.summary-item span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.summary-item p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.method-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.static-labels .label-toggle {
+  justify-content: flex-start;
+  cursor: default;
+}
+
 th,
 td {
   border-bottom: 1px solid var(--line);
@@ -603,7 +737,12 @@ dialog::backdrop {
   }
 
   .kpi-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .landing-grid,
+  .method-grid {
+    grid-template-columns: 1fr;
   }
 }
 

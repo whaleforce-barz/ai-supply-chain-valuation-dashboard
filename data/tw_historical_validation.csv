@@ -1,0 +1,29 @@
+﻿region,section,scenario,label,signal_count,six_month_horizon_days,six_month_return,benchmark_return,excess_return,convergence_rate,hit_rate,max_drawdown,turnover,transaction_cost_case,passed,note
+TW,validation_gate,train_consistency_gate,,,126,,,0.6913913076416383,,,,,,True,Selected profile/Top-N beats adjusted 0050 on train tickers during validation.
+TW,validation_gate,validation_gate,,,126,,,0.08873019886306555,,,,,,True,Selected profile/Top-N beats adjusted 0050 on validation tickers during validation.
+TW,validation_gate,robust_validation_gate,,,126,,,0.08873019886306555,,,,,,True,Validation excess must exceed 5% in base cost and remain positive under double cost.
+TW,sealed_test,validation_robust_gate,,,126,,,0.08873019886306555,,,,,,True,Pre-test gate: validation must beat adjusted 0050 by at least the robust margin and survive double cost.
+TW,sealed_test,company_sealed_test_gate,,,126,,,-0.2690368330409538,,,,,,False,Post-test audit: selected strategy must beat adjusted 0050 on held-out tickers in the sealed period.
+TW,sealed_test,deployment_sealed_test_gate,,,126,,,-0.5289698460518213,,,,,,False,Post-test audit: all-universe deployment run must beat adjusted 0050 in the sealed period.
+TW,sealed_test,overfit_rejection_gate,,,126,,,-0.5289698460518213,,,,,,False,Fails when validation passes but sealed-test deployment does not replicate.
+TW,portfolio_backtest,train_check_validation,,6,126,1.1233911103075669,0.41785105173393955,0.7055400585736273,,1.0,0.0,0.19444444444444442,zero,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,train_check_validation,,6,126,1.1092423593755778,0.41785105173393955,0.6913913076416383,,1.0,0.0,0.19444444444444442,base,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,train_check_validation,,6,126,1.0951565597058486,0.41785105173393955,0.677305507971909,,1.0,0.0,0.19444444444444442,double,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,strategy_validation,,6,126,0.5200761267727687,0.41785105173393955,0.10222507503882916,,0.6875,-0.02045990722332658,0.25,zero,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,strategy_validation,,6,126,0.5065812505970051,0.41785105173393955,0.08873019886306555,,0.6875,-0.02226824055665999,0.25,base,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,strategy_validation,,6,126,0.4931799582795733,0.41785105173393955,0.07532890654563373,,0.6875,-0.02407657388999329,0.25,double,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,sealed_test,,6,126,0.45535390638476914,0.7138211382113819,-0.2584672318266128,,0.5555555555555556,-0.07089691225072259,0.19444444444444442,zero,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,sealed_test,,6,126,0.4447843051704281,0.7138211382113819,-0.2690368330409538,,0.5555555555555556,-0.0708969122507227,0.19444444444444442,base,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,sealed_test,,6,126,0.43426574610315494,0.7138211382113819,-0.279555392108227,,0.5555555555555556,-0.0708969122507227,0.19444444444444442,double,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,all_tickers_test,,6,126,0.21149544680677201,0.7138211382113819,-0.5023256914046099,,0.7222222222222222,-0.07457674410512638,0.5277777777777778,zero,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,all_tickers_test,,6,126,0.18485129215956064,0.7138211382113819,-0.5289698460518213,,0.7222222222222222,-0.07981007743845969,0.5277777777777778,base,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,all_tickers_test,,6,126,0.15865706373237765,0.7138211382113819,-0.5551640744790043,,0.7222222222222222,-0.085043410771793,0.5277777777777778,double,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,deployment_test,,6,126,0.21149544680677201,0.7138211382113819,-0.5023256914046099,,0.7222222222222222,-0.07457674410512638,0.5277777777777778,zero,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,deployment_test,,6,126,0.18485129215956064,0.7138211382113819,-0.5289698460518213,,0.7222222222222222,-0.07981007743845969,0.5277777777777778,base,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,portfolio_backtest,deployment_test,,6,126,0.15865706373237765,0.7138211382113819,-0.5551640744790043,,0.7222222222222222,-0.085043410771793,0.5277777777777778,double,,臺灣既有三段式 revenue_acceleration_value 回測輸出；sealed test 不用於調參。
+TW,label_calibration,six_month_mean_reversion,未充分反映,0,126,,,,,,,,,,以既有月度 signal 近似半年後標籤是否往合理區間收斂。
+TW,label_calibration,six_month_mean_reversion,合理反映,74,126,0.342514,,,0,0.594595,,,,,以既有月度 signal 近似半年後標籤是否往合理區間收斂。
+TW,label_calibration,six_month_mean_reversion,偏熱,49,126,0.382671,,,0.428571,0.734694,,,,,以既有月度 signal 近似半年後標籤是否往合理區間收斂。
+TW,label_calibration,six_month_mean_reversion,過熱,106,126,0.49271,,,0.075472,0.783019,,,,,以既有月度 signal 近似半年後標籤是否往合理區間收斂。
+TW,label_calibration,six_month_mean_reversion,極度過熱 / priced for perfection,56,126,0.884693,,,0.089286,0.928571,,,,,以既有月度 signal 近似半年後標籤是否往合理區間收斂。
+TW,label_calibration,six_month_mean_reversion,資料不足,0,126,,,,,,,,,,以既有月度 signal 近似半年後標籤是否往合理區間收斂。
