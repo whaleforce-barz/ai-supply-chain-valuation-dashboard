@@ -7,7 +7,7 @@ const PAGE_CONFIG = {
     pool: "./data/us_stock_pool.md",
     validation: "./data/us_historical_validation.csv",
     reversion: "./data/us_mean_reversion_results.csv",
-    note: "美國頁只保留美國上市 ticker；歷史驗證待累積 point-in-time 月度估值快照。",
+    note: "美國頁只保留美國上市 ticker；「資料不足」多數代表需補 mid-cycle、ROIC、cash burn 或利用率資料，不是沒有股價。",
   },
   TW: {
     title: "臺灣 AI 供應鏈估值",
@@ -17,7 +17,7 @@ const PAGE_CONFIG = {
     pool: "./data/tw_stock_pool.md",
     validation: "./data/tw_historical_validation.csv",
     reversion: "./data/tw_mean_reversion_results.csv",
-    note: "臺灣頁接入既有 CMoney / MOPS 回測輸出，並保留 sealed-test 與 overfit 警示。",
+    note: "臺灣頁接入既有 CMoney / MOPS 回測輸出；「資料不足」主要是觀測日缺 TTM PE / PB 或 EPS 基礎。",
   },
 };
 
