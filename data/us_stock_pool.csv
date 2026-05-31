@@ -1,0 +1,116 @@
+﻿region,ticker,display_ticker,company,exchange,currency,category,industry_model_class,stage,revenue_purity,role
+US,AMZN,AMZN,Amazon,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,AWS，最大雲端算力需求端之一
+US,MSFT,MSFT,Microsoft,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Azure，OpenAI / enterprise AI 需求核心
+US,GOOGL,GOOGL,Alphabet,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Google Cloud / TPU / AI infrastructure
+US,META,META,Meta,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,已獲利成長,低到中,大型自用 AI cluster 與 Llama 生態
+US,ORCL,ORCL,Oracle,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,OCI，GPU cloud 與 enterprise AI infrastructure
+US,IBM,IBM,IBM,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Enterprise AI、hybrid cloud
+US,CRWV,CRWV,CoreWeave,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,轉機 / 虧轉盈,高,GPU cloud / AI compute pure play
+US,NBIS,NBIS,Nebius,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,已獲利成長,低到中,AI infrastructure / GPU cloud
+US,APLD,APLD,Applied Digital,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,轉機 / 虧轉盈,低到中,AI data center / HPC infrastructure
+US,EQIX,EQIX,Equinix,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Colocation / interconnection data center
+US,DLR,DLR,Digital Realty,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Hyperscale / colocation data center REIT
+US,CORZ,CORZ,Core Scientific,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,已獲利成長,低到中,AI/HPC hosting 與資料中心轉型
+US,IREN,IREN,IREN,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,轉機 / 虧轉盈,低到中,AI/HPC data center 與 power-linked compute
+US,WULF,WULF,TeraWulf,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Power-linked compute / HPC hosting
+US,CIFR,CIFR,Cipher Mining,US,USD,1. L1 需求端 / AI 雲端 / Data Center,軟體 / IP / 平台型,成熟複利,低到中,Data center / compute infrastructure optionality
+US,NVDA,NVDA,NVIDIA,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,高,AI GPU、rack-scale platform、networking
+US,AMD,AMD,AMD,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,中高,AI GPU、CPU、accelerator 替代供應
+US,AVGO,AVGO,Broadcom,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,中高,Custom ASIC、switch silicon、connectivity
+US,MRVL,MRVL,Marvell,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,中高,Custom silicon、optical DSP、data center silicon
+US,INTC,INTC,Intel,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,中,CPU、foundry、accelerator、networking
+US,ARM,ARM,Arm,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,成熟複利,中,CPU IP、data center CPU ecosystem
+US,QCOM,QCOM,Qualcomm,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,成熟複利,中,AI inference、edge/data center optionality
+US,ALAB,ALAB,Astera Labs,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,高,PCIe/CXL retimer、connectivity
+US,MPWR,MPWR,Monolithic Power,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,中,Power management IC
+US,ADI,ADI,Analog Devices,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,中,Analog / power / signal chain
+US,TXN,TXN,Texas Instruments,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,成熟複利,中,Analog / embedded / power IC
+US,MCHP,MCHP,Microchip,US,USD,2. L2 AI 晶片 / ASIC / CPU / 電源 IC,半導體設備 / 高毛利瓶頸股,已獲利成長,中,MCU、timing、control、connectivity
+US,TSM,TSM,TSMC,US,USD,3. L3 半導體製造 / 記憶體,封測 / 代工 / 資本密集,已獲利成長,中高,先進製程晶圓代工、AI GPU/ASIC 核心
+US,MU,MU,Micron,US,USD,3. L3 半導體製造 / 記憶體,封測 / 代工 / 資本密集,已獲利成長,中高,HBM、DRAM、NAND，美系記憶體核心
+US,GFS,GFS,GlobalFoundries,US,USD,3. L3 半導體製造 / 記憶體,封測 / 代工 / 資本密集,成熟複利,中,Specialty foundry
+US,UMC,UMC,UMC,US,USD,3. L3 半導體製造 / 記憶體,封測 / 代工 / 資本密集,成熟複利,中,Mature-node foundry
+US,WDC,WDC,Western Digital,US,USD,3. L3 半導體製造 / 記憶體,封測 / 代工 / 資本密集,已獲利成長,中,NAND / storage
+US,STX,STX,Seagate,US,USD,3. L3 半導體製造 / 記憶體,封測 / 代工 / 資本密集,已獲利成長,中,HDD / enterprise storage
+US,ASML,ASML,ASML,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,EUV / lithography
+US,AMAT,AMAT,Applied Materials,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,Deposition、etch、materials engineering
+US,LRCX,LRCX,Lam Research,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,Etch / deposition
+US,KLAC,KLAC,KLA,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,Process control / inspection
+US,TER,TER,Teradyne,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,已獲利成長,中,Semiconductor test
+US,SNPS,SNPS,Synopsys,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,已獲利成長,中,EDA / IP
+US,CDNS,CDNS,Cadence,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,EDA / simulation
+US,ANSS,ANSS,Ansys,US,,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,早期高成長,中,Simulation / multiphysics
+US,KEYS,KEYS,Keysight,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,已獲利成長,中,Test and measurement
+US,ENTG,ENTG,Entegris,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,Materials / filtration / contamination control
+US,MKSI,MKSI,MKS,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,成熟複利,中,Process subsystems / photonics / vacuum
+US,ICHR,ICHR,Ichor,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,中,Fluid delivery subsystems
+US,AEIS,AEIS,Advanced Energy,US,USD,4. L3 半導體設備 / EDA / 測試,半導體設備 / 高毛利瓶頸股,已獲利成長,中,Power conversion for semiconductor equipment
+US,AMKR,AMKR,Amkor,US,USD,5. L3 先進封裝 / ABF / PCB / CCL,封測 / 代工 / 資本密集,已獲利成長,中,OSAT / advanced packaging
+US,TTMI,TTMI,TTM Technologies,US,USD,5. L3 先進封裝 / ABF / PCB / CCL,封測 / 代工 / 資本密集,已獲利成長,中,PCB / aerospace and data center exposure
+US,ROG,ROG,Rogers,US,USD,5. L3 先進封裝 / ABF / PCB / CCL,封測 / 代工 / 資本密集,轉機 / 虧轉盈,中,High-performance materials
+US,DELL,DELL,Dell,US,USD,6. L2/L3 AI Server / ODM / Rack,ODM / EMS / 低毛利代工,已獲利成長,中高,AI server / enterprise infrastructure
+US,HPE,HPE,HPE,US,USD,6. L2/L3 AI Server / ODM / Rack,ODM / EMS / 低毛利代工,轉機 / 虧轉盈,中,AI server / HPC / networking
+US,SMCI,SMCI,Super Micro,US,USD,6. L2/L3 AI Server / ODM / Rack,ODM / EMS / 低毛利代工,已獲利成長,高,AI server / rack-scale systems
+US,ANET,ANET,Arista,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,已獲利成長,高,Data center switching / AI Ethernet
+US,CSCO,CSCO,Cisco,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Networking / optics / enterprise data center
+US,NOK,NOK,Nokia,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Optical / IP networking
+US,CIEN,CIEN,Ciena,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,已獲利成長,中,Optical networking
+US,COHR,COHR,Coherent,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,成熟複利,高,Optical components / transceivers
+US,LITE,LITE,Lumentum,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,已獲利成長,中,Optical components
+US,FN,FN,Fabrinet,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,已獲利成長,中,Optical manufacturing
+US,AAOI,AAOI,Applied Optoelectronics,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,中,Optical transceivers
+US,VIAV,VIAV,Viavi,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,中,Optical test and measurement
+US,MTSI,MTSI,MACOM,US,USD,7. L2/L3 Networking / 光通訊,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,RF / optical / high-speed components
+US,VRT,VRT,Vertiv,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,已獲利成長,高,UPS、PDU、thermal、liquid cooling
+US,ETN,ETN,Eaton,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中高,Switchgear、UPS、transformer、power management
+US,GEV,GEV,GE Vernova,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中高,Grid、gas power、electrification
+US,HUBB,HUBB,Hubbell,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Electrical products、utility components
+US,RRX,RRX,Regal Rexnord,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Motors、power transmission、thermal components
+US,ATKR,ATKR,Atkore,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,中,Electrical conduit / cable management
+US,WCC,WCC,WESCO,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Electrical distribution
+US,EMR,EMR,Emerson,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Automation、thermal / infrastructure systems
+US,ROK,ROK,Rockwell Automation,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Industrial automation
+US,PH,PH,Parker-Hannifin,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Motion control、fluid connectors、thermal components
+US,HON,HON,Honeywell,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Building automation、control systems
+US,JCI,JCI,Johnson Controls,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Building systems / HVAC
+US,TT,TT,Trane Technologies,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Cooling / HVAC
+US,CARR,CARR,Carrier,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,成熟複利,中,Cooling / HVAC
+US,MOD,MOD,Modine,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,已獲利成長,中,Thermal management
+US,AAON,AAON,AAON,US,USD,8. L4 Data Center 電力 / 散熱 / 配電,零組件 / 連接器 / 電源 / 散熱,已獲利成長,中,HVAC / precision cooling exposure
+US,PWR,PWR,Quanta Services,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,已獲利成長,中,Grid construction、substation、utility EPC
+US,MTZ,MTZ,MasTec,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,已獲利成長,中,Infrastructure construction
+US,DY,DY,Dycom,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,已獲利成長,中,Telecom / infrastructure services
+US,ACM,ACM,AECOM,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,成熟複利,中,Engineering / infrastructure design
+US,FIX,FIX,Comfort Systems USA,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,成熟複利,中,Mechanical / electrical contracting
+US,GVA,GVA,Granite Construction,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,已獲利成長,中,Infrastructure construction
+US,FLR,FLR,Fluor,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,成熟複利,中,EPC / industrial projects
+US,J,J,Jacobs,US,USD,9. L4 EPC / 建設 / 機電工程,成熟複利 / 工程服務,已獲利成長,中,Engineering / program management
+US,CAT,CAT,Caterpillar,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,成熟複利,中,Backup generators、engines
+US,CMI,CMI,Cummins,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,成熟複利,中,Generators、engines、power systems
+US,GNRC,GNRC,Generac,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,成熟複利,中,Backup power / distributed energy
+US,BE,BE,Bloom Energy,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,已獲利成長,中,Fuel cells / onsite power
+US,FCEL,FCEL,FuelCell Energy,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,轉機 / 虧轉盈,中,Fuel cell systems
+US,PLUG,PLUG,Plug Power,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,轉機 / 虧轉盈,中,Hydrogen / fuel cell infrastructure
+US,BLDP,BLDP,Ballard Power,US,USD,10. L5 備援電力 / 微電網 / 燃料電池,資本設備 / 轉機或成長,轉機 / 虧轉盈,中,Fuel cell systems
+US,NEE,NEE,NextEra Energy,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Renewable / utility / grid-scale power
+US,CEG,CEG,Constellation Energy,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Nuclear power / clean firm power
+US,VST,VST,Vistra,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Independent power producer
+US,NRG,NRG,NRG Energy,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Power generation / retail energy
+US,DUK,DUK,Duke Energy,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Regulated utility
+US,SO,SO,Southern Company,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Regulated utility / power generation
+US,AEP,AEP,American Electric Power,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Transmission / utility
+US,EXC,EXC,Exelon,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Utility / transmission
+US,PEG,PEG,PSEG,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Utility / power
+US,SRE,SRE,Sempra,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,成熟複利,低到中,Utility / LNG / grid
+US,OKLO,OKLO,Oklo,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,轉機 / 虧轉盈,低到中,Advanced nuclear
+US,SMR,SMR,NuScale Power,US,USD,11. L5 電力供應 / 公用事業 / 核能,公用事業 / 資本密集,轉機 / 虧轉盈,低到中,Small modular reactor
+US,FCX,FCX,Freeport-McMoRan,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Copper
+US,SCCO,SCCO,Southern Copper,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Copper
+US,TECK,TECK,Teck Resources,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Copper / base metals
+US,BHP,BHP,BHP,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Copper / iron ore / commodities
+US,RIO,RIO,Rio Tinto,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Copper / aluminum / commodities
+US,NUE,NUE,Nucor,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Steel
+US,STLD,STLD,Steel Dynamics,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Steel
+US,AA,AA,Alcoa,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Aluminum
+US,LIN,LIN,Linde,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Industrial gases
+US,APD,APD,Air Products,US,USD,12. L5 原材料 / 工業氣體 / 電纜,材料 / 化學品,成熟複利,低到中,Industrial gases

@@ -13,6 +13,8 @@ data schema are shared.
 - `app.js`: client-side filtering, sorting, validation panels, mean-reversion panels, and detail modal
 - `styles.css`: dashboard styling
 - `data/*.csv`: normalized valuation, historical validation, and six-month mean-reversion data
+- `data/us_stock_pool.*`: US-only stock pool
+- `data/tw_stock_pool.*`: Taiwan-only stock pool
 - `data/method_audit.json`: shared method and data-status audit
 - `scripts/build_ai_supply_chain_unified_dataset.py`: rebuilds dashboard data from local research outputs
 

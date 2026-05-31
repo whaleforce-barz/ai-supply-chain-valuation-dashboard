@@ -4,15 +4,17 @@ const PAGE_CONFIG = {
     eyebrow: "US AI Supply Chain",
     benchmark: "SOXX / QQQ",
     csv: "./data/us_valuation_screen.csv",
+    pool: "./data/us_stock_pool.md",
     validation: "./data/us_historical_validation.csv",
     reversion: "./data/us_mean_reversion_results.csv",
-    note: "美股 current screen 已完整保留；歷史驗證待累積 point-in-time 月度估值快照。",
+    note: "美國頁只保留美國上市 ticker；歷史驗證待累積 point-in-time 月度估值快照。",
   },
   TW: {
     title: "臺灣 AI 供應鏈估值",
     eyebrow: "Taiwan AI Supply Chain",
     benchmark: "0050 / TAIEX",
     csv: "./data/tw_valuation_screen.csv",
+    pool: "./data/tw_stock_pool.md",
     validation: "./data/tw_historical_validation.csv",
     reversion: "./data/tw_mean_reversion_results.csv",
     note: "臺灣頁接入既有 CMoney / MOPS 回測輸出，並保留 sealed-test 與 overfit 警示。",
@@ -121,6 +123,7 @@ const els = {
   pageNote: document.querySelector("#pageNote"),
   benchmark: document.querySelector("#benchmark"),
   csvLink: document.querySelector("#csvLink"),
+  poolLink: document.querySelector("#poolLink"),
   validationLink: document.querySelector("#validationLink"),
   reversionLink: document.querySelector("#reversionLink"),
   search: document.querySelector("#searchInput"),
@@ -270,6 +273,7 @@ async function initDashboard(region) {
   els.pageNote.textContent = state.config.note;
   els.benchmark.textContent = state.config.benchmark;
   els.csvLink.href = state.config.csv;
+  els.poolLink.href = state.config.pool;
   els.validationLink.href = state.config.validation;
   els.reversionLink.href = state.config.reversion;
 

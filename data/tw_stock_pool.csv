@@ -1,0 +1,63 @@
+﻿region,ticker,display_ticker,company,exchange,currency,category,industry_model_class,stage,revenue_purity,role
+TW,3661,3661.TW,世芯-KY,TW,TWD,ASIC design / IP服務,ASIC design / IP服務,已獲利成長 / 專案型高波動,高,AI ASIC turnkey；ASIC design
+TW,3443,3443.TW,創意,TW,TWD,ASIC design / IP服務,ASIC design / IP服務,已獲利成長 / 專案型高波動,高,AI ASIC turnkey；ASIC design
+TW,2454,2454.TW,聯發科,TW,TWD,ASIC design / IP服務,ASIC design / IP服務,已獲利成長 / 專案型高波動,高,邊緣 AI / 客製晶片
+TW,2379,2379.TW,瑞昱,TW,TWD,ASIC design / IP服務,ASIC design / IP服務,已獲利成長 / 專案型高波動,高,邊緣 AI / 客製晶片
+TW,2330,2330.TW,台積電,TW,TWD,Foundry / 先進封裝,Foundry / 先進封裝,成熟複利 + AI成長,中高,先進晶圓代工；CoWoS / SoIC；Foundry；Advanced packaging
+TW,2303,2303.TW,聯電,TW,TWD,Foundry / 先進封裝,Foundry / 先進封裝,成熟複利 + AI成長,中高,先進晶圓代工；Foundry
+TW,3711,3711.TW,日月光投控,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,CoWoS / SoIC；OSAT / advanced packaging；Advanced packaging
+TW,6239,6239.TW,力成,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,OSAT / advanced packaging
+TW,2449,2449.TW,京元電子,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,晶片測試服務；Wafer probe / specialty test；Test
+TW,6257,6257.TW,矽格,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,晶片測試服務；Test
+TW,3264,3264.TW,欣銓,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,Wafer probe / specialty test
+TW,2360,2360.TW,致茂,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,測試設備 / 介面；Test interface
+TW,6223,6223.TW,旺矽,TW,TWD,封測 / 測試 / 測試介面,封測 / 測試 / 測試介面,已獲利成長 + 資本密集,中高,測試設備 / 介面；Test interface
+TW,3037,3037.TW,欣興,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,ABF 載板；ABF substrate
+TW,8046,8046.TW,南電,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,ABF 載板；ABF substrate
+TW,3189,3189.TW,景碩,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,IC 載板第二梯隊
+TW,4958,4958.TW,臻鼎-KY,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,IC 載板第二梯隊
+TW,2368,2368.TW,金像電,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,高,AI server PCB
+TW,3044,3044.TW,健鼎,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,高,AI server PCB
+TW,2383,2383.TW,台光電,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,高速 CCL；CCL
+TW,6274,6274.TW,台燿,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,高速 CCL；CCL
+TW,6213,6213.TW,聯茂,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,CCL 第二梯隊
+TW,4939,4939.TW,亞電,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,CCL 第二梯隊
+TW,8358,8358.TW,金居,TW,TWD,PCB / CCL / 載板材料,PCB / CCL / 載板材料,景氣循環 + AI規格升級,中高,銅箔 / 相關材料
+TW,2317,2317.TW,鴻海,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,AI server / rack ODM；系統整合 / 建置；AI server ODM/OEM
+TW,2382,2382.TW,廣達,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,AI server / rack ODM；Hyperscale server ODM；系統整合 / 建置；AI server ODM/OEM
+TW,6669,6669.TW,緯穎,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,Hyperscale server ODM；純 data center ODM；Hyperscale ODM
+TW,3231,3231.TW,緯創,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,NVIDIA / CSP server；Hyperscale ODM
+TW,2356,2356.TW,英業達,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,NVIDIA / CSP server
+TW,3706,3706.TW,神達,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,純 data center ODM
+TW,2376,2376.TW,技嘉,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,Enterprise AI server brand
+TW,2357,2357.TW,華碩,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,Enterprise AI server brand
+TW,3515,3515.TW,華擎,TW,TWD,AI server ODM / Rack integration,AI server ODM / Rack integration,已獲利成長 + 低毛利代工,高,Server board / rack brand
+TW,3693,3693.TW,營邦,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,Server board / rack brand；機殼 / rack thermal；資料中心機櫃 / chassis
+TW,2308,2308.TW,台達電,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,高,Data center power；AI server PSU / power shelf；UPS / power infra；Power components；CDU / rack cooling；Management switch / rack network；Busbar / power interconnect；Power
+TW,2301,2301.TW,光寶科,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,高,Data center power；AI server PSU / power shelf；Server power supply；CDU / rack cooling；Power
+TW,6412,6412.TW,群電,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,中高,Server power supply
+TW,1514,1514.TW,亞力,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,中高,UPS / power infra；機電工程
+TW,6282,6282.TW,康舒,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,中高,Power components
+TW,3017,3017.TW,奇鋐,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,液冷 cold plate / module；Cooling
+TW,3324,3324.TW,雙鴻,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,液冷 cold plate / module；Cooling
+TW,2421,2421.TW,建準,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,Fan / thermal module
+TW,6591,6591.TW,動力-KY,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,Fan / thermal module
+TW,3653,3653.TW,健策,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,機構 / 散熱件
+TW,6805,6805.TW,富世達,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,機構 / 散熱件
+TW,8210,8210.TW,勤誠,TW,TWD,散熱 / 液冷 / 機構件,散熱 / 液冷 / 機構件,已獲利成長 + 規格升級,高,機殼 / rack thermal；資料中心機櫃 / chassis
+TW,2345,2345.TW,智邦,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,Data center switch ODM；Open networking / white box；Management switch / rack network；Switch
+TW,3380,3380.TW,明泰,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,Data center switch ODM；Switch
+TW,2332,2332.TW,UfiSpace / 友訊投控關聯,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,Open networking / white box
+TW,6285,6285.TW,啟碁,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,Enterprise / telecom networking
+TW,5388,5388.TW,中磊,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,Enterprise / telecom networking
+TW,3665,3665.TW,貿聯-KY,TW,TWD,線纜 / 連接器 / 光通訊,線纜 / 連接器 / 光通訊,已獲利成長 + 規格升級,高,高速線纜 / interconnect；Busbar / power interconnect；Cable / connector
+TW,3023,3023.TW,信邦,TW,TWD,線纜 / 連接器 / 光通訊,線纜 / 連接器 / 光通訊,已獲利成長 + 規格升級,高,高速線纜 / interconnect
+TW,3533,3533.TW,嘉澤,TW,TWD,線纜 / 連接器 / 光通訊,線纜 / 連接器 / 光通訊,已獲利成長 + 規格升級,高,Connector；Cable / connector
+TW,3526,3526.TW,凡甲,TW,TWD,線纜 / 連接器 / 光通訊,線纜 / 連接器 / 光通訊,已獲利成長 + 規格升級,高,Connector
+TW,3081,3081.TW,聯亞,TW,TWD,線纜 / 連接器 / 光通訊,線纜 / 連接器 / 光通訊,已獲利成長 + 規格升級,高,光通訊模組 / optics
+TW,3363,3363.TW,上詮,TW,TWD,線纜 / 連接器 / 光通訊,線纜 / 連接器 / 光通訊,已獲利成長 + 規格升級,高,光通訊模組 / optics
+TW,4979,4979.TW,華星光,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,光收發 / networking components
+TW,6442,6442.TW,光聖,TW,TWD,交換機 / 網通 / AI fabric,交換機 / 網通 / AI fabric,已獲利成長 + 規格升級,高,光收發 / networking components
+TW,1503,1503.TW,士電,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,中高,電力工程 / 重電；Data center power infra
+TW,1519,1519.TW,華城,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,中高,電力工程 / 重電；Data center power infra
+TW,1513,1513.TW,中興電,TW,TWD,電源 / 資料中心供電,電源 / 資料中心供電,成熟複利 + AI電力升級,中高,機電工程

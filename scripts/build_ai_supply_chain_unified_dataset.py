@@ -110,6 +110,20 @@ MEAN_REVERSION_FIELDS = [
     "note",
 ]
 
+STOCK_POOL_FIELDS = [
+    "region",
+    "ticker",
+    "display_ticker",
+    "company",
+    "exchange",
+    "currency",
+    "category",
+    "industry_model_class",
+    "stage",
+    "revenue_purity",
+    "role",
+]
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -126,10 +140,44 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 def write_csv(path: Path, rows: list[dict[str, object]], fields: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8-sig") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: clean_cell(row.get(field)) for field in fields})
+
+
+def write_stock_pool_md(path: Path, title: str, rows: list[dict[str, object]]) -> None:
+    grouped: dict[str, list[dict[str, object]]] = defaultdict(list)
+    for row in rows:
+        grouped[str(row.get("category") or "未分類")].append(row)
+
+    lines = [
+        f"# {title}",
+        "",
+        "此檔案只列股票池，不混入另一個市場。估值資料請看同市場的 valuation screen CSV。",
+        "",
+        f"- 股票數：{len(rows)}",
+        f"- 更新時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        "",
+    ]
+    for category in sorted(grouped, key=lambda value: re.sub(r"^\d+\.\s*", "", value)):
+        items = sorted(grouped[category], key=lambda row: str(row.get("display_ticker") or row.get("ticker")))
+        lines.extend([f"## {category}", "", "|Ticker|公司|交易所|產業模型|階段|AI 純度|角色|", "|---|---|---|---|---|---|---|"])
+        for row in items:
+            lines.append(
+                "|"
+                + "|".join(
+                    md_cell(row.get(field, ""))
+                    for field in ["display_ticker", "company", "exchange", "industry_model_class", "stage", "revenue_purity", "role"]
+                )
+                + "|"
+            )
+        lines.append("")
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def md_cell(value: object) -> str:
+    return str(value or "").replace("|", "\\|").replace("\n", " ")
 
 
 def clean_cell(value: object) -> object:
@@ -211,11 +259,13 @@ def normalize_us_rows(workspace: Path) -> list[dict[str, object]]:
     rows = read_csv(workspace / "ai_supply_chain_valuation_screen.csv")
     normalized = []
     for row in rows:
+        ticker = row.get("ticker", "")
+        if "." in ticker:
+            continue
         industry = row.get("industry_class", "")
         stage = row.get("stage", "")
         label = row.get("valuation_label") or "資料不足"
         data_status = "complete" if not row.get("fetch_error") else "資料不足"
-        ticker = row.get("ticker", "")
         normalized.append(
             {
                 **row,
@@ -590,6 +640,10 @@ def main() -> None:
 
     write_csv(out / "us_valuation_screen.csv", us_rows, SCREEN_FIELDS)
     write_csv(out / "tw_valuation_screen.csv", tw_rows, SCREEN_FIELDS)
+    write_csv(out / "us_stock_pool.csv", us_rows, STOCK_POOL_FIELDS)
+    write_csv(out / "tw_stock_pool.csv", tw_rows, STOCK_POOL_FIELDS)
+    write_stock_pool_md(out / "us_stock_pool.md", "美國 AI 供應鏈股票池", us_rows)
+    write_stock_pool_md(out / "tw_stock_pool.md", "臺灣 AI 供應鏈股票池", tw_rows)
     write_csv(out / "us_historical_validation.csv", build_us_validation(), VALIDATION_FIELDS)
     write_csv(out / "tw_historical_validation.csv", build_tw_validation(workspace), VALIDATION_FIELDS)
     write_csv(out / "us_mean_reversion_results.csv", build_mean_reversion("US", us_rows), MEAN_REVERSION_FIELDS)

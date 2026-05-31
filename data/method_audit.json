@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31 10:19:07",
+  "updated_at": "2026-05-31 10:36:45",
   "shared_labels": [
     "未充分反映",
     "合理反映",
@@ -28,7 +28,7 @@
   ],
   "data_status": {
     "US": {
-      "screen_rows": 157,
+      "screen_rows": 115,
       "historical_validation": "pending_point_in_time_snapshots",
       "warning": "美股 current screen 已完整保留；歷史驗證需後續產生月度估值快照。"
     },
