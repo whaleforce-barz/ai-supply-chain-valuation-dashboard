@@ -12,8 +12,6 @@ Static dashboard for the AI data center supply-chain valuation screen.
 
 ## Deployment
 
-GitHub Actions deploys the repository root to the Whaleforce HTTP static host on every push to `main`.
+GitHub Actions deploys the repository root to GitHub Pages on every push to `main`.
 
-Public URL:
-
-https://filebrowser.aws.whaleforce.ai/barz-hsu/static-sites/ai-supply-chain-valuation-dashboard/index.html
+The public Pages URL is shown in each successful workflow run.
