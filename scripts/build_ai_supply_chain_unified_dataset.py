@@ -264,7 +264,7 @@ def normalize_us_rows(workspace: Path) -> list[dict[str, object]]:
             continue
         industry = row.get("industry_class", "")
         stage = row.get("stage", "")
-        label = row.get("valuation_label") or "資料不足"
+        label, read = normalize_us_label(row)
         data_status = "complete" if not row.get("fetch_error") else "資料不足"
         normalized.append(
             {
@@ -276,7 +276,8 @@ def normalize_us_rows(workspace: Path) -> list[dict[str, object]]:
                 "industry_model_class": industry,
                 "lifecycle_stage": stage,
                 "valuation_basis": valuation_basis_for(industry, row.get("valuation_models", "")),
-                "valuation_label": label if label in LABEL_SCORE else "資料不足",
+                "valuation_label": label,
+                "model_read": read,
                 "data_status": data_status,
                 "six_month_return": "",
                 "benchmark_return": "",
@@ -284,6 +285,72 @@ def normalize_us_rows(workspace: Path) -> list[dict[str, object]]:
             }
         )
     return normalized
+
+
+def normalize_us_label(row: dict[str, str]) -> tuple[str, str]:
+    original = row.get("valuation_label") or "資料不足"
+    original_read = row.get("model_read") or ""
+    if original != "資料不足":
+        return original if original in LABEL_SCORE else "資料不足", original_read
+
+    industry = row.get("industry_class", "")
+    pe = safe_float(row.get("forwardPE")) or safe_float(row.get("trailingPE"))
+    ev = safe_float(row.get("evToEbitda"))
+    ps = safe_float(row.get("ps"))
+    pb = safe_float(row.get("pb"))
+    margin = safe_float(row.get("profitMargins"))
+    growth = safe_float(row.get("revenueGrowth"))
+    has_multiple = any(value is not None and value > 0 for value in [pe, ev, ps, pb])
+    if not has_multiple:
+        return "資料不足", original_read or "缺少可用的 PE / EV/EBITDA / PS / PB 基礎"
+
+    suffix = "；provisional label，仍需補完整週期/現金流資料覆核"
+
+    if "封測" in industry:
+        if ev is not None and ev > 25:
+            return "過熱", "資本密集公司 EV/EBITDA > 25x，估值要求高利用率多年維持" + suffix
+        if pe is not None and pe > 35:
+            return "過熱", "資本密集公司 PE > 35x，需要 capex 後 ROIC 明確改善" + suffix
+        if pe is not None and pe > 24:
+            return "偏熱", "資本密集公司 PE 已高於保守區間，需用 utilization / FCF 驗證" + suffix
+        if ev is not None and ev <= 18 or pe is not None:
+            return "合理反映", "已有 PE/EV 倍數可初步判斷，估值未明顯脫離資本密集模型" + suffix
+
+    if "材料" in industry:
+        if ev is not None and ev > 15 or pb is not None and pb > 4:
+            return "偏熱", "材料/循環股倍數偏高，需要 mid-cycle EBITDA / ROIC 支撐" + suffix
+        if pe is not None and pe <= 18 or ev is not None and ev <= 13:
+            return "合理反映", "以可得 PE/EV/EBITDA 看未明顯過熱，但仍需 mid-cycle 覆核" + suffix
+        return "偏熱", "材料/循環股缺 mid-cycle 邊際資料，先以可得倍數標為偏熱覆核" + suffix
+
+    if "ODM" in industry:
+        if ps is not None and ps > 3 or ev is not None and ev > 18:
+            return "偏熱", "低毛利代工估值需要 EBIT margin 與現金轉換支持" + suffix
+        if pe is not None and pe <= 20:
+            return "合理反映", "低毛利代工以 forward PE / EV/EBITDA 看尚可解釋" + suffix
+        return "偏熱", "低毛利代工估值已要求 AI server margin 改善" + suffix
+
+    if "公用事業" in industry:
+        if ps is None and (pe is None or pe < 0) and (pb is not None and pb > 3):
+            return "過熱", "早期能源/核能標的缺穩定營收與 earnings，價格已反映遠期情境" + suffix
+        if pe is not None and pe > 30:
+            return "過熱", "資本密集能源/公用事業 PE > 30x，需負載成長與監管支持" + suffix
+        return "合理反映", "以可得資產/盈餘倍數初步可解釋，仍需專案現金流覆核" + suffix
+
+    if (margin is not None and margin < 0) or pe is not None and pe < 0:
+        if ps is not None and ps > 5 or ev is not None and ev > 40:
+            return "過熱", "虧損或轉機型標的估值已要求明確轉盈" + suffix
+        if pe is not None and pe > 0 and pe <= 30:
+            return "偏熱", "forward PE 可用但當期仍虧損，需 breakeven / cash burn 覆核" + suffix
+        return "資料不足", original_read or "虧損公司缺 breakeven revenue / cash burn 資料"
+
+    if pe is not None and pe <= 20 and (growth is None or growth >= 0):
+        return "合理反映", "可得 PE 顯示估值未明顯過熱" + suffix
+    if pe is not None and pe <= 35:
+        return "偏熱", "可得 PE 已偏高但仍可給出初步標籤" + suffix
+    if pe is not None:
+        return "過熱", "可得 PE 已高，需成長與現金流兌現" + suffix
+    return "資料不足", original_read or "缺少可用估值基礎"
 
 
 def latest_tw_rows(workspace: Path) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, dict[str, str]]]:
