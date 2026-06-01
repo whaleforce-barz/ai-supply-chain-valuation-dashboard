@@ -539,7 +539,7 @@ button:focus-visible {
 
 table {
   width: 100%;
-  min-width: 1480px;
+  min-width: 1640px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -599,6 +599,14 @@ table {
   padding-left: 20px;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.matrix-panel {
+  overflow: hidden;
+}
+
+.registry-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .static-labels .label-toggle {
@@ -741,7 +749,8 @@ dialog::backdrop {
   }
 
   .landing-grid,
-  .method-grid {
+  .method-grid,
+  .registry-list {
     grid-template-columns: 1fr;
   }
 }

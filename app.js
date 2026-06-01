@@ -7,6 +7,7 @@ const PAGE_CONFIG = {
     pool: "./data/us_stock_pool.md",
     validation: "./data/us_historical_validation.csv",
     reversion: "./data/us_mean_reversion_results.csv",
+    modelValidation: "./data/us_model_validation.csv",
     note: "美國頁只保留美國上市 ticker；「資料不足」多數代表需補 mid-cycle、ROIC、cash burn 或利用率資料，不是沒有股價。",
   },
   TW: {
@@ -17,6 +18,7 @@ const PAGE_CONFIG = {
     pool: "./data/tw_stock_pool.md",
     validation: "./data/tw_historical_validation.csv",
     reversion: "./data/tw_mean_reversion_results.csv",
+    modelValidation: "./data/tw_model_validation.csv",
     note: "臺灣頁接入既有 CMoney / MOPS 回測輸出；「資料不足」主要是觀測日缺 TTM PE / PB 或 EPS 基礎。",
   },
 };
@@ -57,6 +59,8 @@ const SORT_LABELS = {
   profitMargins: "淨利率",
   valuation_gap_pct: "估值 gap",
   six_month_return: "半年報酬",
+  selected_model: "選用模型",
+  model_confidence: "模型信心",
 };
 
 const RANGE_META = {
@@ -99,6 +103,14 @@ const NUMERIC_KEYS = new Set([
   "fair_high",
   "valuation_gap_pct",
   "history_months",
+  "model_validation_signal_count",
+  "model_validation_convergence_rate",
+  "model_validation_hit_rate",
+  "signal_count",
+  "coverage_ratio",
+  "median_excess_return",
+  "label_calibration_score",
+  "model_score",
 ]);
 
 const state = {
@@ -106,6 +118,7 @@ const state = {
   rows: [],
   validation: [],
   reversion: [],
+  modelValidation: [],
   filtered: [],
   activeLabels: new Set(LABELS),
   sortKey: "severity",
@@ -126,6 +139,7 @@ const els = {
   poolLink: document.querySelector("#poolLink"),
   validationLink: document.querySelector("#validationLink"),
   reversionLink: document.querySelector("#reversionLink"),
+  modelValidationSummary: document.querySelector("#modelValidationSummary"),
   search: document.querySelector("#searchInput"),
   category: document.querySelector("#categoryFilter"),
   purity: document.querySelector("#purityFilter"),
@@ -278,15 +292,17 @@ async function initDashboard(region) {
   els.reversionLink.href = state.config.reversion;
 
   try {
-    const [rows, validation, reversion] = await Promise.all([
+    const [rows, validation, reversion, modelValidation] = await Promise.all([
       fetchCsv(state.config.csv),
       fetchCsv(state.config.validation),
       fetchCsv(state.config.reversion),
+      fetchCsv(state.config.modelValidation),
     ]);
     const reversionByTicker = new Map(reversion.map((row) => [String(row.ticker), row]));
     state.rows = rows.map((row) => ({ ...row, ...(reversionByTicker.get(String(row.ticker)) || {}) }));
     state.validation = validation;
     state.reversion = reversion;
+    state.modelValidation = modelValidation;
     els.status.textContent = `已載入 ${state.rows.length} 檔`;
     setupFilters();
     bindEvents();
@@ -423,6 +439,7 @@ function render() {
   renderKpis();
   renderCharts();
   renderValidation();
+  renderModelValidation();
   renderReversion();
   renderWatchLists();
   renderActiveFilters();
@@ -566,6 +583,58 @@ function renderValidation() {
   `;
 }
 
+function confidenceTag(value) {
+  const label = value || "none";
+  const className =
+    label === "high" ? "cool" : label === "medium" ? "fair" : label === "low" ? "warm" : "missing";
+  return `<span class="tag ${className}">${escapeAttr(label)}</span>`;
+}
+
+function renderModelValidation() {
+  if (!els.modelValidationSummary) return;
+  const selected = state.modelValidation
+    .filter((row) => String(row.is_selected).toLowerCase() === "true")
+    .sort((a, b) => String(a.industry_model_class).localeCompare(String(b.industry_model_class), "zh-Hant"));
+  els.modelValidationSummary.innerHTML = `
+    <div class="mini-table">
+      <table>
+        <thead>
+          <tr>
+            <th>產業模型</th>
+            <th>階段</th>
+            <th>Primary</th>
+            <th>Fallback</th>
+            <th>信心</th>
+            <th>Coverage</th>
+            <th>Signals</th>
+            <th>收斂率</th>
+            <th>Hit rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${selected
+            .map(
+              (row) => `
+                <tr>
+                  <td>${escapeAttr(row.industry_model_class)}</td>
+                  <td>${escapeAttr(row.lifecycle_stage || "-")}</td>
+                  <td><strong>${escapeAttr(row.candidate_model)}</strong></td>
+                  <td>${escapeAttr(row.fallback_model || "-")}</td>
+                  <td>${confidenceTag(row.model_confidence)}</td>
+                  <td>${escapeAttr(row.coverage_status || "-")}</td>
+                  <td class="numeric">${row.signal_count ?? "-"}</td>
+                  <td class="numeric">${formatPct(row.convergence_rate)}</td>
+                  <td class="numeric">${formatPct(row.hit_rate)}</td>
+                </tr>
+              `,
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
 function renderReversion() {
   const sorted = [...state.reversion].sort((a, b) => Math.abs(b.valuation_gap_pct || 0) - Math.abs(a.valuation_gap_pct || 0)).slice(0, 8);
   els.reversionSummary.innerHTML = `
@@ -632,6 +701,8 @@ function renderTable() {
           <td>${escapeAttr(row.company)}</td>
           <td>${escapeAttr(cleanCategory(row.category))}</td>
           <td>${labelTag(row.valuation_label)}</td>
+          <td>${escapeAttr(row.selected_model || "-")}</td>
+          <td>${confidenceTag(row.model_confidence)}</td>
           <td class="numeric">${formatNumber(row.price, 2)} ${row.currency || ""}</td>
           <td class="numeric">${formatNumber(row.marketCap)}</td>
           <td class="numeric">${formatNumber(row.trailingPE, 1)}</td>
@@ -715,6 +786,9 @@ function openDetail(ticker) {
         ${detailStat("市值", formatNumber(row.marketCap))}
         ${detailStat("AI 純度", row.revenue_purity || "-")}
         ${detailStat("估值 basis", row.valuation_basis || "-")}
+        ${detailStat("選用模型", row.selected_model || "-")}
+        ${detailStat("模型信心", row.model_confidence || "-")}
+        ${detailStat("Coverage", row.coverage_status || "-")}
         ${detailStat("目前倍數", `${row.valuation_basis || ""} ${formatNumber(row.current_multiple, 1)}`)}
         ${detailStat("合理中位", formatNumber(row.fair_mid, 1))}
         ${detailStat("估值 gap", formatPct(row.valuation_gap_pct))}
@@ -723,6 +797,7 @@ function openDetail(ticker) {
       </div>
       <p><strong>供應鏈類型：</strong>${escapeAttr(cleanCategory(row.category))}</p>
       <p><strong>估值模型：</strong>${escapeAttr(row.valuation_models || "-")}</p>
+      <p><strong>模型驗證：</strong>${escapeAttr(row.model_validation_note || "-")} Signals: ${escapeAttr(row.model_validation_signal_count || "-")}；收斂率 ${formatPct(row.model_validation_convergence_rate)}；Hit rate ${formatPct(row.model_validation_hit_rate)}。</p>
       <p><strong>判讀：</strong>${escapeAttr(row.model_read || "-")}</p>
       <p><a href="${escapeAttr(row.source_url)}" target="_blank" rel="noreferrer">外部資料頁</a></p>
     </section>
@@ -780,6 +855,66 @@ function renderMethodAudit(audit) {
         <div class="label-filters static-labels">
           ${(audit.shared_labels || LABELS).map((label) => `<div class="label-toggle active">${labelTag(label)}</div>`).join("")}
         </div>
+      </div>
+    </section>
+    <section class="panel matrix-panel">
+      <div class="panel-head"><h2>產業估值模型矩陣</h2><span>industry × stage</span></div>
+      <div class="mini-table">
+        <table>
+          <thead>
+            <tr>
+              <th>市場</th>
+              <th>產業模型</th>
+              <th>階段</th>
+              <th>Primary</th>
+              <th>Fallback</th>
+              <th>信心</th>
+              <th>Coverage</th>
+              <th>Signals</th>
+              <th>收斂率</th>
+              <th>Hit rate</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(audit.model_matrix || [])
+              .map(
+                (row) => `
+                  <tr>
+                    <td>${escapeAttr(row.region)}</td>
+                    <td>${escapeAttr(row.industry_model_class)}</td>
+                    <td>${escapeAttr(row.lifecycle_stage || "-")}</td>
+                    <td><strong>${escapeAttr(row.primary_model)}</strong></td>
+                    <td>${escapeAttr(row.fallback_model || "-")}</td>
+                    <td>${confidenceTag(row.model_confidence)}</td>
+                    <td>${escapeAttr(row.coverage_status || "-")}</td>
+                    <td class="numeric">${row.signal_count ?? "-"}</td>
+                    <td class="numeric">${formatPct(row.convergence_rate)}</td>
+                    <td class="numeric">${formatPct(row.hit_rate)}</td>
+                    <td>${escapeAttr(row.method_status || "-")}</td>
+                  </tr>
+                `,
+              )
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="panel matrix-panel">
+      <div class="panel-head"><h2>候選模型 Registry</h2><span>selection candidates</span></div>
+      <div class="summary-list registry-list">
+        ${Object.entries(audit.model_registry || {})
+          .map(
+            ([key, item]) => `
+              <div class="summary-item">
+                <strong>${escapeAttr(key)}</strong>
+                <span>${escapeAttr((item.candidates || []).join(" / "))}</span>
+                <p>${escapeAttr(item.why || "")}</p>
+                <p>資料缺口：${escapeAttr(item.gaps || "")}</p>
+              </div>
+            `,
+          )
+          .join("")}
       </div>
     </section>
   `;

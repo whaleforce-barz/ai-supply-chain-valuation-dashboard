@@ -1,0 +1,108 @@
+﻿region,industry_model_class,lifecycle_stage,candidate_model,candidate_rank,is_selected,fallback_model,signal_count,coverage_ratio,convergence_rate,hit_rate,median_excess_return,label_calibration_score,model_score,model_confidence,coverage_status,method_status,reason
+US,ODM / EMS / 低毛利代工,已獲利成長,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,已獲利成長,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,已獲利成長,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,已獲利成長,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,已獲利成長,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,轉機 / 虧轉盈,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,轉機 / 虧轉盈,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,轉機 / 虧轉盈,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,轉機 / 虧轉盈,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,ODM / EMS / 低毛利代工,轉機 / 虧轉盈,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,成熟複利,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,成熟複利,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,成熟複利,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,成熟複利,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,成熟複利,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,轉機 / 虧轉盈,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,轉機 / 虧轉盈,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,轉機 / 虧轉盈,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,轉機 / 虧轉盈,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,公用事業 / 資本密集,轉機 / 虧轉盈,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,已獲利成長,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,已獲利成長,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,已獲利成長,PEG/implied CAGR,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,已獲利成長,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,已獲利成長,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,成熟複利,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,成熟複利,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,成熟複利,PEG/implied CAGR,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,成熟複利,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,成熟複利,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,早期高成長,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,早期高成長,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,早期高成長,PEG/implied CAGR,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,早期高成長,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,早期高成長,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,PEG/implied CAGR,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,半導體設備 / 高毛利瓶頸股,轉機 / 虧轉盈,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,已獲利成長,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,已獲利成長,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,已獲利成長,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,已獲利成長,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,已獲利成長,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,成熟複利,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,成熟複利,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,成熟複利,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,成熟複利,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,成熟複利,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,轉機 / 虧轉盈,EV/EBITDA,1,true,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,轉機 / 虧轉盈,Forward PE,2,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,轉機 / 虧轉盈,PB,3,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,轉機 / 虧轉盈,Own History Percentile,4,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,封測 / 代工 / 資本密集,轉機 / 虧轉盈,Peer Relative Z,5,false,EV/EBITDA,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,已獲利成長,PB,1,true,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,已獲利成長,EV/EBITDA,2,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,已獲利成長,Forward PE,3,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,已獲利成長,Peer Relative Z,4,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,成熟複利,PB,1,true,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,成熟複利,EV/EBITDA,2,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,成熟複利,Forward PE,3,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,成熟複利 / 工程服務,成熟複利,Peer Relative Z,4,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,材料 / 化學品,成熟複利,PB,1,true,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,材料 / 化學品,成熟複利,EV/EBITDA,2,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,材料 / 化學品,成熟複利,Forward PE,3,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,材料 / 化學品,成熟複利,Own History Percentile,4,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,材料 / 化學品,成熟複利,Peer Relative Z,5,false,PB,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,已獲利成長,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,已獲利成長,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,已獲利成長,PB,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,已獲利成長,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,成熟複利,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,成熟複利,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,成熟複利,PB,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,成熟複利,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,轉機 / 虧轉盈,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,轉機 / 虧轉盈,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,轉機 / 虧轉盈,PB,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,資本設備 / 轉機或成長,轉機 / 虧轉盈,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,已獲利成長,PS,1,true,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,已獲利成長,Forward PE,2,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,已獲利成長,Peer Relative Z,3,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,已獲利成長,Own History Percentile,4,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,成熟複利,PS,1,true,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,成熟複利,Forward PE,2,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,成熟複利,Peer Relative Z,3,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,成熟複利,Own History Percentile,4,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,轉機 / 虧轉盈,PS,1,true,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,轉機 / 虧轉盈,Forward PE,2,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,轉機 / 虧轉盈,Peer Relative Z,3,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,軟體 / IP / 平台型,轉機 / 虧轉盈,Own History Percentile,4,false,PS,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,已獲利成長,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,已獲利成長,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,已獲利成長,PB,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,已獲利成長,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,已獲利成長,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,成熟複利,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,成熟複利,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,成熟複利,PB,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,成熟複利,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,成熟複利,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,Forward PE,1,true,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,EV/EBITDA,2,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,PB,3,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,Peer Relative Z,4,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。
+US,零組件 / 連接器 / 電源 / 散熱,轉機 / 虧轉盈,Own History Percentile,5,false,Forward PE,0,,,,,,,none,coverage_gap,pending_history,美股尚未建立 point-in-time 月度 fundamental snapshots；先使用 registry fallback，不宣稱已驗證。

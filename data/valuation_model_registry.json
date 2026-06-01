@@ -1,0 +1,130 @@
+{
+  "software_platform": {
+    "patterns": [
+      "軟體",
+      "平台",
+      "IP"
+    ],
+    "candidates": [
+      "PS",
+      "Forward PE",
+      "Peer Relative Z",
+      "Own History Percentile"
+    ],
+    "fallback": "PS",
+    "why": "平台型公司常有高毛利與折舊差異，PS/FCF margin 比單一 PE 更穩定。",
+    "gaps": "FCF margin, gross profit, Rule of 40, AI revenue purity"
+  },
+  "high_margin_equipment": {
+    "patterns": [
+      "半導體設備",
+      "ASIC",
+      "測試",
+      "交換機",
+      "光通訊"
+    ],
+    "candidates": [
+      "Forward PE",
+      "EV/EBITDA",
+      "PEG/implied CAGR",
+      "Peer Relative Z",
+      "Own History Percentile"
+    ],
+    "fallback": "Forward PE",
+    "why": "高毛利成長股優先測試 forward earnings 與 implied CAGR 是否能解釋估值。",
+    "gaps": "forward estimate history, backlog, gross margin, customer concentration"
+  },
+  "capital_intensive": {
+    "patterns": [
+      "Foundry",
+      "封測",
+      "代工",
+      "資本密集",
+      "晶圓"
+    ],
+    "candidates": [
+      "EV/EBITDA",
+      "Forward PE",
+      "PB",
+      "Own History Percentile",
+      "Peer Relative Z"
+    ],
+    "fallback": "EV/EBITDA",
+    "why": "資本密集產業需要同時看 EBITDA、折舊、利用率與 ROIC。",
+    "gaps": "utilization, capex後FCF, ROIC, depreciation cycle"
+  },
+  "odm_ems": {
+    "patterns": [
+      "ODM",
+      "EMS",
+      "Rack",
+      "server",
+      "Server"
+    ],
+    "candidates": [
+      "EV/EBITDA",
+      "Forward PE",
+      "Peer Relative Z",
+      "Own History Percentile"
+    ],
+    "fallback": "EV/EBITDA",
+    "why": "低毛利代工不適合高 PS，應看 EBIT/EBITDA 與現金轉換。",
+    "gaps": "EBIT margin, FCF conversion, working capital, pass-through revenue"
+  },
+  "components_power_cooling": {
+    "patterns": [
+      "零組件",
+      "電源",
+      "供電",
+      "散熱",
+      "液冷",
+      "連接器"
+    ],
+    "candidates": [
+      "Forward PE",
+      "EV/EBITDA",
+      "PB",
+      "Peer Relative Z",
+      "Own History Percentile"
+    ],
+    "fallback": "Forward PE",
+    "why": "元件、電力與散熱供應鏈通常以 earnings multiple 搭配 margin stability 驗證。",
+    "gaps": "gross margin stability, backlog, customer qualification, ASP trend"
+  },
+  "materials_cyclical": {
+    "patterns": [
+      "材料",
+      "PCB",
+      "CCL",
+      "載板",
+      "銅箔"
+    ],
+    "candidates": [
+      "PB",
+      "EV/EBITDA",
+      "Forward PE",
+      "Own History Percentile",
+      "Peer Relative Z"
+    ],
+    "fallback": "PB",
+    "why": "材料與循環股需避免用高峰 EPS 判斷便宜，PB 與 normalized EBITDA 更保守。",
+    "gaps": "mid-cycle margin, inventory cycle, commodity spread, ROIC"
+  },
+  "utilities_power": {
+    "patterns": [
+      "公用事業",
+      "電力",
+      "工程服務",
+      "備援電力"
+    ],
+    "candidates": [
+      "PB",
+      "EV/EBITDA",
+      "Forward PE",
+      "Peer Relative Z"
+    ],
+    "fallback": "PB",
+    "why": "資產型與電力基礎設施需看 book value、regulated return 與專案現金流。",
+    "gaps": "regulated ROE, load growth, project cash flow, financing cost"
+  }
+}

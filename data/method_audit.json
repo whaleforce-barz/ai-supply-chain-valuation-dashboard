@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31 10:44:58",
+  "updated_at": "2026-06-01 13:07:46",
   "shared_labels": [
     "未充分反映",
     "合理反映",
@@ -9,6 +9,554 @@
     "資料不足"
   ],
   "horizon_trading_days": 126,
+  "model_registry": {
+    "software_platform": {
+      "patterns": [
+        "軟體",
+        "平台",
+        "IP"
+      ],
+      "candidates": [
+        "PS",
+        "Forward PE",
+        "Peer Relative Z",
+        "Own History Percentile"
+      ],
+      "fallback": "PS",
+      "why": "平台型公司常有高毛利與折舊差異，PS/FCF margin 比單一 PE 更穩定。",
+      "gaps": "FCF margin, gross profit, Rule of 40, AI revenue purity"
+    },
+    "high_margin_equipment": {
+      "patterns": [
+        "半導體設備",
+        "ASIC",
+        "測試",
+        "交換機",
+        "光通訊"
+      ],
+      "candidates": [
+        "Forward PE",
+        "EV/EBITDA",
+        "PEG/implied CAGR",
+        "Peer Relative Z",
+        "Own History Percentile"
+      ],
+      "fallback": "Forward PE",
+      "why": "高毛利成長股優先測試 forward earnings 與 implied CAGR 是否能解釋估值。",
+      "gaps": "forward estimate history, backlog, gross margin, customer concentration"
+    },
+    "capital_intensive": {
+      "patterns": [
+        "Foundry",
+        "封測",
+        "代工",
+        "資本密集",
+        "晶圓"
+      ],
+      "candidates": [
+        "EV/EBITDA",
+        "Forward PE",
+        "PB",
+        "Own History Percentile",
+        "Peer Relative Z"
+      ],
+      "fallback": "EV/EBITDA",
+      "why": "資本密集產業需要同時看 EBITDA、折舊、利用率與 ROIC。",
+      "gaps": "utilization, capex後FCF, ROIC, depreciation cycle"
+    },
+    "odm_ems": {
+      "patterns": [
+        "ODM",
+        "EMS",
+        "Rack",
+        "server",
+        "Server"
+      ],
+      "candidates": [
+        "EV/EBITDA",
+        "Forward PE",
+        "Peer Relative Z",
+        "Own History Percentile"
+      ],
+      "fallback": "EV/EBITDA",
+      "why": "低毛利代工不適合高 PS，應看 EBIT/EBITDA 與現金轉換。",
+      "gaps": "EBIT margin, FCF conversion, working capital, pass-through revenue"
+    },
+    "components_power_cooling": {
+      "patterns": [
+        "零組件",
+        "電源",
+        "供電",
+        "散熱",
+        "液冷",
+        "連接器"
+      ],
+      "candidates": [
+        "Forward PE",
+        "EV/EBITDA",
+        "PB",
+        "Peer Relative Z",
+        "Own History Percentile"
+      ],
+      "fallback": "Forward PE",
+      "why": "元件、電力與散熱供應鏈通常以 earnings multiple 搭配 margin stability 驗證。",
+      "gaps": "gross margin stability, backlog, customer qualification, ASP trend"
+    },
+    "materials_cyclical": {
+      "patterns": [
+        "材料",
+        "PCB",
+        "CCL",
+        "載板",
+        "銅箔"
+      ],
+      "candidates": [
+        "PB",
+        "EV/EBITDA",
+        "Forward PE",
+        "Own History Percentile",
+        "Peer Relative Z"
+      ],
+      "fallback": "PB",
+      "why": "材料與循環股需避免用高峰 EPS 判斷便宜，PB 與 normalized EBITDA 更保守。",
+      "gaps": "mid-cycle margin, inventory cycle, commodity spread, ROIC"
+    },
+    "utilities_power": {
+      "patterns": [
+        "公用事業",
+        "電力",
+        "工程服務",
+        "備援電力"
+      ],
+      "candidates": [
+        "PB",
+        "EV/EBITDA",
+        "Forward PE",
+        "Peer Relative Z"
+      ],
+      "fallback": "PB",
+      "why": "資產型與電力基礎設施需看 book value、regulated return 與專案現金流。",
+      "gaps": "regulated ROE, load growth, project cash flow, financing cost"
+    }
+  },
+  "model_matrix": [
+    {
+      "region": "US",
+      "industry_model_class": "ODM / EMS / 低毛利代工",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "ODM / EMS / 低毛利代工",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "公用事業 / 資本密集",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "公用事業 / 資本密集",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "半導體設備 / 高毛利瓶頸股",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "半導體設備 / 高毛利瓶頸股",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "半導體設備 / 高毛利瓶頸股",
+      "lifecycle_stage": "早期高成長",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "半導體設備 / 高毛利瓶頸股",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "封測 / 代工 / 資本密集",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "封測 / 代工 / 資本密集",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "封測 / 代工 / 資本密集",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "EV/EBITDA",
+      "fallback_model": "EV/EBITDA",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "成熟複利 / 工程服務",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "PB",
+      "fallback_model": "PB",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "成熟複利 / 工程服務",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "PB",
+      "fallback_model": "PB",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "材料 / 化學品",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "PB",
+      "fallback_model": "PB",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "資本設備 / 轉機或成長",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "資本設備 / 轉機或成長",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "資本設備 / 轉機或成長",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "軟體 / IP / 平台型",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "PS",
+      "fallback_model": "PS",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "軟體 / IP / 平台型",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "PS",
+      "fallback_model": "PS",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "軟體 / IP / 平台型",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "PS",
+      "fallback_model": "PS",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "零組件 / 連接器 / 電源 / 散熱",
+      "lifecycle_stage": "已獲利成長",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "零組件 / 連接器 / 電源 / 散熱",
+      "lifecycle_stage": "成熟複利",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "US",
+      "industry_model_class": "零組件 / 連接器 / 電源 / 散熱",
+      "lifecycle_stage": "轉機 / 虧轉盈",
+      "primary_model": "Forward PE",
+      "fallback_model": "Forward PE",
+      "model_confidence": "none",
+      "coverage_status": "coverage_gap",
+      "signal_count": 0,
+      "convergence_rate": "",
+      "hit_rate": "",
+      "method_status": "pending_history"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "AI server ODM / Rack integration",
+      "lifecycle_stage": "已獲利成長 + 低毛利代工",
+      "primary_model": "Forward PE",
+      "fallback_model": "Peer Relative Z",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 45,
+      "convergence_rate": "0.422222",
+      "hit_rate": "0.666667",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "ASIC design / IP服務",
+      "lifecycle_stage": "已獲利成長 / 專案型高波動",
+      "primary_model": "Forward PE",
+      "fallback_model": "Peer Relative Z",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 20,
+      "convergence_rate": "0.4",
+      "hit_rate": "0.3",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "Foundry / 先進封裝",
+      "lifecycle_stage": "成熟複利 + AI成長",
+      "primary_model": "Forward PE",
+      "fallback_model": "Own History Percentile",
+      "model_confidence": "low",
+      "coverage_status": "low_sample_fallback",
+      "signal_count": 10,
+      "convergence_rate": "0.4",
+      "hit_rate": "0.1",
+      "method_status": "research-only"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "PCB / CCL / 載板材料",
+      "lifecycle_stage": "景氣循環 + AI規格升級",
+      "primary_model": "PB",
+      "fallback_model": "Forward PE",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 50,
+      "convergence_rate": "0.34",
+      "hit_rate": "0.42",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "交換機 / 網通 / AI fabric",
+      "lifecycle_stage": "已獲利成長 + 規格升級",
+      "primary_model": "Forward PE",
+      "fallback_model": "PEG/implied CAGR",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 25,
+      "convergence_rate": "0.32",
+      "hit_rate": "0.28",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "封測 / 測試 / 測試介面",
+      "lifecycle_stage": "已獲利成長 + 資本密集",
+      "primary_model": "PEG/implied CAGR",
+      "fallback_model": "Forward PE",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 35,
+      "convergence_rate": "0.542857",
+      "hit_rate": "0.428571",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "散熱 / 液冷 / 機構件",
+      "lifecycle_stage": "已獲利成長 + 規格升級",
+      "primary_model": "Forward PE",
+      "fallback_model": "Peer Relative Z",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 40,
+      "convergence_rate": "0.4",
+      "hit_rate": "0.3",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "線纜 / 連接器 / 光通訊",
+      "lifecycle_stage": "已獲利成長 + 規格升級",
+      "primary_model": "PEG/implied CAGR",
+      "fallback_model": "Forward PE",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 25,
+      "convergence_rate": "0.36",
+      "hit_rate": "0.32",
+      "method_status": "validated"
+    },
+    {
+      "region": "TW",
+      "industry_model_class": "電源 / 資料中心供電",
+      "lifecycle_stage": "成熟複利 + AI電力升級",
+      "primary_model": "PB",
+      "fallback_model": "Forward PE",
+      "model_confidence": "medium",
+      "coverage_status": "partial_history",
+      "signal_count": 35,
+      "convergence_rate": "0.342857",
+      "hit_rate": "0.457143",
+      "method_status": "validated"
+    }
+  ],
   "benchmarks": {
     "US": {
       "primary": "SOXX",
@@ -21,7 +569,9 @@
     }
   },
   "method": [
-    "同一 industry_model_class 對應同一 valuation_basis。",
+    "以 industry_model_class × lifecycle_stage 建立候選估值模型 registry。",
+    "每個候選模型用半年 valuation gap 收斂率、peer-relative hit rate、coverage ratio 與 label calibration 評分。",
+    "同一 industry_model_class 對應同一 valuation_basis，但 primary model 由歷史驗證結果選出。",
     "合理估值區間採自身歷史與同業分布 50/50；歷史不足時標示 fallback。",
     "歷史驗證使用月度 signal date 與約 126 交易日半年觀察期。",
     "sealed test 不可用於反向調參，失敗結果必須顯示。"

@@ -98,6 +98,10 @@
             <div class="panel"><div class="panel-head"><h2>歷史驗證</h2><span>126 trading days</span></div><div id="validationSummary"></div></div>
             <div class="panel"><div class="panel-head"><h2>半年均值回歸</h2><span>history + peers</span></div><div id="reversionSummary"></div></div>
           </section>
+          <section class="panel">
+            <div class="panel-head"><h2>產業模型驗證</h2><span>industry × stage</span></div>
+            <div id="modelValidationSummary"></div>
+          </section>
           <section class="split-grid">
             <div class="panel"><div class="panel-head"><h2>高風險名單</h2><span>過熱以上</span></div><div id="riskList" class="watch-list"></div></div>
             <div class="panel"><div class="panel-head"><h2>相對合理名單</h2><span>合理 / 未充分反映</span></div><div id="reasonableList" class="watch-list"></div></div>
@@ -113,6 +117,8 @@
                     <th><button class="sort-head" type="button" data-sort="company">公司</button></th>
                     <th><button class="sort-head" type="button" data-sort="category">類型</button></th>
                     <th><button class="sort-head" type="button" data-sort="valuation_label">標籤</button></th>
+                    <th><button class="sort-head" type="button" data-sort="selected_model">選用模型</button></th>
+                    <th><button class="sort-head" type="button" data-sort="model_confidence">信心</button></th>
                     <th><button class="sort-head" type="button" data-sort="price">價格</button></th>
                     <th><button class="sort-head" type="button" data-sort="marketCap">市值</button></th>
                     <th><button class="sort-head" type="button" data-sort="trailingPE">TTM PE</button></th>

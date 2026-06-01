@@ -15,6 +15,9 @@ data schema are shared.
 - `data/*.csv`: normalized valuation, historical validation, and six-month mean-reversion data
 - `data/us_stock_pool.*`: US-only stock pool
 - `data/tw_stock_pool.*`: Taiwan-only stock pool
+- `data/*_model_validation.csv`: industry/stage valuation model validation
+- `data/*_historical_snapshots.csv`: point-in-time validation snapshots
+- `data/valuation_model_registry.json`: candidate model registry
 - `data/method_audit.json`: shared method and data-status audit
 - `scripts/build_ai_supply_chain_unified_dataset.py`: rebuilds dashboard data from local research outputs
 
